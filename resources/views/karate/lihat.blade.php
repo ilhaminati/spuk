@@ -48,7 +48,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Tambah Nilai</h1>
+                    <h1 class="page-header">Lihat Nilai</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -74,7 +74,20 @@
             <td>{{ $karate->ranting }}</td>
             <td>{{ $karate->kyu_lama }}</td>
             <td>{{ $karate->kyu_baru }}</td>
-            <td>{{ $karate->sabuk }}</td>
+            <td>@if (($karate->kyu_baru) === 10)
+                    Putih
+                @elseif (($karate->kyu_baru) >= 7)
+                    Kuning
+                @elseif (($karate->kyu_baru) === 6 )
+                    Hijau
+                @elseif (($karate->kyu_baru) >=4 )
+                    Biru
+                @elsif (($karate->kyu_baru) <= 3 )
+                @else
+                    Unknown
+                @endif
+
+            </td>
             <td><a href="#"><i class="fa fa-pencil"></i></a> <a href="#"><i class="fa fa-trash-o"></i></a></td>
         </tr>
     @endforeach
