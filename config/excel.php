@@ -60,7 +60,7 @@ return array(
     'properties' => array(
         'creator'        => 'Maatwebsite',
         'lastModifiedBy' => 'Maatwebsite',
-        'title'          => 'Spreadsheet',
+        'title'          => 'Nilai',
         'description'    => 'Default spreadsheet export',
         'subject'        => 'Spreadsheet export',
         'keywords'       => 'maatwebsite, excel, export',

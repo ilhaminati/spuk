@@ -54,6 +54,11 @@ class KarateController extends Controller
             $excel->sheet('Laporan', function($sheet)
             {
                 $karate = Karate::all();
+                $sheet->mergeCells('A1:H1');
+                $sheet->cells('A1:H1', function($cells)
+                {   
+                    $cells->setAlignment('center');
+                });
                 $sheet->loadView('karate.download')->with('karate', $karate);
             })->download('xls');
         });

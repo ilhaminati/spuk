@@ -1,4 +1,5 @@
-<table class="table table-striped">
+<h1>HASIL UJIAN KENAIKAN TINGKAT (kyu) INKAI CABANG CIANJUR</h1>
+<table>
     <thead>
     <tr>
         <th>Nomor Peserta</th>
@@ -8,7 +9,6 @@
         <th>Kyu Lama</th>
         <th>Kyu Baru</th>
         <th>Sabuk</th>
-        <th>Opsi</th>
     </tr>
     </thead>
     <tbody>
@@ -20,8 +20,18 @@
             <td>{{ $karate->ranting }}</td>
             <td>{{ $karate->kyu_lama }}</td>
             <td>{{ $karate->kyu_baru }}</td>
-            <td>{{ $karate->sabuk }}</td>
-            <td><a href="#"><i class="fa fa-pencil"></i></a> <a href="#"><i class="fa fa-trash-o"></i></a></td>
+            <td>@if (($karate->kyu_baru) === 10)
+                    Putih
+                @elseif (($karate->kyu_baru) >= 7)
+                    Kuning
+                @elseif (($karate->kyu_baru) === 6 )
+                    Hijau
+                @elseif (($karate->kyu_baru) >= 4 )
+                    Biru
+                @else
+                    Cokelat
+                @endif
+            </td>
         </tr>
     @endforeach
     </tbody>

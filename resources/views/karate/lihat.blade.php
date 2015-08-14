@@ -55,6 +55,7 @@
 <table class="table table-striped">
     <thead>
     <tr>
+        <th>#</th>
         <th>Nomor Peserta</th>
         <th>Nama</th>
         <th>Tempat Tanggal Lahir</th>
@@ -68,6 +69,7 @@
     <tbody>
     @foreach ($karate as $karate)
         <tr>
+            <th>{{ $karate->id }}</th>
             <th scope="row">{{ $karate->no_urut }}</th>
             <td>{{ $karate->nama }}</td>
             <td>{{ $karate->ttl }}</td>
@@ -80,11 +82,10 @@
                     Kuning
                 @elseif (($karate->kyu_baru) === 6 )
                     Hijau
-                @elseif (($karate->kyu_baru) >=4 )
+                @elseif (($karate->kyu_baru) >= 4 )
                     Biru
-                @elsif (($karate->kyu_baru) <= 3 )
                 @else
-                    Unknown
+                    Cokelat
                 @endif
 
             </td>
